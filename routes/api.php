@@ -8,3 +8,5 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 Route::get('/anb/token', [ANBController::class, 'getAccessToken']);
+Route::post('/withdraw', [ANBController::class, 'withdrawFromBank']);
+Route::post('/payment', [ANBController::class, 'sendPayment']);

@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('anb_account_number')->unique();
+            $table->string('anb_token');
+            $table->timestamp('anb_token_expiry');
+            $table->string('anb_refresh_token')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
